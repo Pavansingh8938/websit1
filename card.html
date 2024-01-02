@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+.container{
+  width: 300px;
+  height: 300px;
+  /* border: 1px solid black; */
+  position: relative;
+  /* top: 100px; */
+}
+.card{
+    text-align: center;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.089);
+    transition: all 0.4s;
+    backdrop-filter: blur(20px);
+}
+.container:hover .card{
+    color: black;
+}
+.container::before,.container::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: -2;
+    transition: all 0.4s;
+    /* border: 1px solid black; */
+}
+.container::before{
+    top: 0;
+    right: 0;
+    background: linear-gradient(transparent,rgb(149, 240, 116));
+}
+.container::after{
+   bottom: 0;
+   left: 0;
+ background: linear-gradient(transparent,rgb(154, 223, 223));
+}
+.container:hover::before{
+    width: 50px;
+    height: 50px;
+    transform: translate(20px,-20px);
+     border-radius: 50%;
+}
+.container:hover::after{
+    width: 50px;
+    height: 50px;
+    transform: translate(-20px,20px);
+    border-radius: 50%;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>home</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis ipsum magnam corrupti ut possimus
+                temporibus eveniet, dolorum tenetur error totam vero ad quis, ipsam alias quasi a nesciunt tempore
+                laboriosam!</p>
+        </div>
+    </div>
+</body>
+
+</html>
